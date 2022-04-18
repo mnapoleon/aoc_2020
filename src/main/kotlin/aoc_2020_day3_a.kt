@@ -1,5 +1,5 @@
 fun main() {
-    val lines = readFileAsLinesUsingReadLines("input_day3.txt")
+    val lines = Utils.getResourceAsText("input_day3.txt")
 
     val slopes: List<Pair<Int, Int>> = listOf(Pair(1,1), Pair(3,1), Pair(5,1), Pair(7,1), Pair(1,2))
     val tree = '#'
@@ -8,8 +8,8 @@ fun main() {
     for(slope in slopes) {
         var treeCount = 0
         var position = Pair(0,0)
-        for ((i1, _) in lines.withIndex()) {
-            position = move(position, slope, lines[slope.second])
+        for ((i1, _) in lines!!.withIndex()) {
+            position = move(position, slope, lines!![slope.second])
             if (atBottom(position.second, lines.size)) {
                 break
             }

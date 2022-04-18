@@ -1,5 +1,5 @@
 fun main() {
-    val values = readFileAsLinesUsingReadLinesToInts("input_day1.txt")
+    val values = Utils.getResourceAsText("input_day1.txt")!!.map { it.toInt() }
     for ((i1, _) in values.withIndex()) {
         for((i2, _) in values.withIndex()) {
             for((i3, _) in values.withIndex()) {

@@ -26,10 +26,10 @@ fun isPassportValid(passport: MutableMap<String, String>):Boolean {
 }
 
 fun readInPassportBatch(fileName: String): MutableList<MutableMap<String, String>> {
-    val rows = File(fileName).readLines()
+    val rows = Utils.getResourceAsText(fileName)
     val passports: MutableList<MutableMap<String, String>> = mutableListOf()
     var pMap: MutableMap<String, String> = mutableMapOf()
-    for (row in rows) {
+    for (row in rows!!) {
         if (!row.isEmpty()) {
           val values = row.split(" ")
           for (value in values) {

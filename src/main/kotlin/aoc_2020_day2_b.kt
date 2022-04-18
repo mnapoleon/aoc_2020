@@ -1,9 +1,9 @@
 import java.io.File
 
 fun main() {
-    val values = readFileAsLinesUsingReadLines("input_day2.txt")
+    val values = Utils.getResourceAsText("input_day2.txt")
     var validPasswords = 0
-    values.map {
+    values!!.map {
         val line = it.split(" ")
         val first = line[0].split("-")[0].toInt()
         val second = line[0].split("-")[1].toInt()

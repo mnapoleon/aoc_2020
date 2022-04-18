@@ -1,7 +1,7 @@
 import java.io.File
 
 fun main() {
-    val values = readFileAsLinesUsingReadLinesToInts("input_day1.txt")
+    val values = Utils.getResourceAsText("input_day1.txt")!!.map { it.toInt() }
 
     for ((i1, v1) in values.withIndex()) {
         for((i2, v2) in values.withIndex()) {
@@ -16,6 +16,3 @@ fun main() {
         }
     }
 }
-
-fun readFileAsLinesUsingReadLinesToInts(fileName: String): List<Int> =
-    File(fileName).readLines().map {it.toInt() }
